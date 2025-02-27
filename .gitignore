@@ -1,0 +1,9 @@
+# Ignore IDEs conf files
+.vscode/
+
+# Ignore build files
+/build/*
+/build*/*
+
+# Ignore external dependencies files
+/ext/*/*
