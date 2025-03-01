@@ -1,1 +1,1 @@
-subdir('test_standalone')
+subdir('prototype')
