@@ -1,9 +1,10 @@
-# Ignore IDEs conf files
 .vscode/
 
-# Ignore build files
-/build/*
-/build*/*
+build/*
+build*/*
+out/*
+out*/*
 
-# Ignore external dependencies files
-/subprojects/*/*
+subprojects/*
+3rdparty/*/
+!3rdparty/glad/
