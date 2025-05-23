@@ -1,8 +1,8 @@
 prototype = executable(
   'prototype', 
-  'main.cc',
-  dependencies: [tornasol_dep],
-  link_with: [],
+  'prototype.cc',
+  dependencies: tornasol_dep,
+  link_with: tornasol_lib,
 )
 
 test(

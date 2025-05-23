@@ -14,5 +14,5 @@ glad_lib = static_library('glad',
 
 glad_dep = declare_dependency(
   include_directories: glad_include,
-  link_with: [glad_lib],
+  link_with: glad_lib,
 )

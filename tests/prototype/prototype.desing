@@ -1,0 +1,18 @@
+#include <tornasol/tornasol.hh>
+
+int main(int, char**) {
+	auto engine = sol::init_engine().value();
+	auto window = sol::make_window("Hello, World!", { 800, 600 }).value();
+    
+	while (!window.should_close()) {
+		// handle business logic
+        
+        // render ui
+        // engine.render_ui(); 
+
+		window.swap_buffers();
+		engine.poll_events();
+	}
+
+	return 0;
+}
