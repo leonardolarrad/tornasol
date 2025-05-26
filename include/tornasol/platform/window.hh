@@ -1,6 +1,29 @@
 #pragma once
+#include <functional>
 #include "tornasol/common/common.hh"
 #include "tornasol/platform/input.hh"
+
+namespace tornasol {
+using namespace sol;
+
+class window {
+public:
+    std::function<void(key, i32, input_action, key_modifier)>  on_input_key;
+    std::function<void(char32_t)>                              on_input_char;  
+    
+    virtual ~window() {}
+    virtual auto show() noexcept -> void = 0;
+    virtual auto hide() noexcept -> void = 0;
+    virtual auto should_close() const noexcept -> bool = 0;
+
+    virtual auto make_current_gl_context() noexcept -> void = 0;
+    virtual auto swap_buffers() noexcept -> void = 0;
+};
+
+TORNASOL_EXPORT 
+auto make_window(std::string_view title, isize2 size) -> result<unique<window>>;
+
+}
 
 namespace sol {
 
@@ -16,6 +39,8 @@ public:
     window(const window&) = delete;
     window& operator=(const window&) = delete;
     ~window();
+
+    std::function<void(char32_t)>                on_input_char;
 
     auto show() noexcept -> void;
     auto hide() noexcept -> void;

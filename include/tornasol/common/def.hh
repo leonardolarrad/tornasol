@@ -1,4 +1,7 @@
 #pragma once
+#include <cassert>
+
+#define TORNASOL_ASSERT(x) assert(x)
 
 #if !defined(TORNASOL_EXPORT)
     #if defined(TORNASOL_SHARED)

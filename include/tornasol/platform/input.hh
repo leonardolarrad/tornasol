@@ -1,4 +1,6 @@
 #pragma once
+#include "tornasol/common/common.hh"
+
 namespace sol {
 
 enum class key {
@@ -97,23 +99,23 @@ enum class key {
     f23,
     f24,
     f25,
-    kp_0,
-    kp_1,
-    kp_2,
-    kp_3,
-    kp_4,
-    kp_5,
-    kp_6,
-    kp_7,
-    kp_8,
-    kp_9,
-    kp_decimal,
-    kp_divide,
-    kp_multiply,
-    kp_subtract,
-    kp_add,
-    kp_enter,
-    kp_equal,
+    numpad_0,
+    numpad_1,
+    numpad_2,
+    numpad_3,
+    numpad_4,
+    numpad_5,
+    numpad_6,
+    numpad_7,
+    numpad_8,
+    numpad_9,
+    numpad_decimal,
+    numpad_divide,
+    numpad_multiply,
+    numpad_subtract,
+    numpad_add,
+    numpad_enter,
+    numpad_equal,
     left_shift,
     left_control,
     left_alt,
@@ -125,13 +127,13 @@ enum class key {
     menu
 };
 
-enum class key_modifier {
-    shift,
-    control,
-    alt,
-    super,
-    caps_lock,
-    num_lock
+enum class key_modifier : u32 {
+    shift     = 1 << 0,
+    control   = 1 << 1,
+    alt       = 1 << 2,
+    super     = 1 << 3,
+    caps_lock = 1 << 4,
+    num_lock  = 1 << 5
 };
 
 enum class mouse_button {

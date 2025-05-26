@@ -34,6 +34,10 @@ glad_proj = subproject('glad', required: true)
 glad_dep = glad_proj.get_variable('glad_dep')
 tornasol_deps += glad_dep
 
+freetype_proj = subproject('freetype2', required: true)
+freetype_dep = freetype_proj.get_variable('freetype_dep')
+#tornasol_deps += freetype_dep
+
 ## Library
 
 tornasol_inc = include_directories('include')
@@ -67,4 +71,6 @@ tornasol_dep = declare_dependency(
 
 if get_option('enable_tests')
   subdir('tests/prototype')
+  subdir('tests/type')
+  subdir('tests/basic')
 endif
