@@ -58,11 +58,11 @@ auto load_font() -> bool {
 		return false;
 	}
 	
-	if (FT_New_Face(ft_lib, "source_code_pro.ttf", 0, &ft_face)) {
+	if (FT_New_Face(ft_lib, "times.ttf", 0, &ft_face)) {
 		return false;
 	}
 
-	FT_Set_Pixel_Sizes(ft_face, 0, 48);
+	FT_Set_Pixel_Sizes(ft_face, 0, 16);
 
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // disable byte-alignment restriction
 
@@ -237,16 +237,11 @@ auto center_layout(std::string_view text) -> sol::fvec2 {
 }
 
 int main(int, char**) {
-	auto engine = sol::init_engine().value();
+	auto engine = sol::init_engine().value();	
+	auto window = sol::make_window("tornasol-type", screen_size).value();
 	
-	{
-		auto window = tornasol::make_window("tmp", screen_size).value();
-		window->make_current_gl_context();
-		gladLoadGLLoader((GLADloadproc)sol::get_opengl_load_proc());
-	}
-	
-	auto window = tornasol::make_window("tornasol-type", screen_size).value();
 	window->make_current_gl_context();
+	gladLoadGLLoader((GLADloadproc)sol::get_opengl_load_proc());
 
 	if (!load_font()) {
 		std::printf("Failed to load font\n");
@@ -263,6 +258,7 @@ int main(int, char**) {
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glDepthMask(GL_FALSE);
 
 	std::string text = "";
 
@@ -285,8 +281,6 @@ int main(int, char**) {
 	
 	while (!window->should_close()) {
 		window->make_current_gl_context();
-		
-
 
 		render_background();
 		render_text(
@@ -295,7 +289,7 @@ int main(int, char**) {
 			{ 0.0f, 0.0f, 0.0f });
 
 		window->swap_buffers();
-		engine.poll_events();
+		engine.wait_events();
 	}
 
 	free_font();

@@ -44,7 +44,7 @@ tornasol_inc = include_directories('include')
 tornasol_src = [
   'src/engine.cc',
   'src/window.cc',
-  'src/opengl_proc.cc',
+  'src/opengl.cc',
 ]
 
 if get_option('default_library') != 'static'

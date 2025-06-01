@@ -57,4 +57,13 @@ auto engine::poll_events() noexcept -> void {
     glfwPollEvents();
 }
 
+auto engine::wait_events(f64 timeout) noexcept -> void {
+    if (timeout != 0.0f) {
+        glfwWaitEventsTimeout(timeout);
+    }
+    else {
+        glfwWaitEvents();
+    }
+}
+
 } // namespace sol

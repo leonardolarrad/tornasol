@@ -15,6 +15,7 @@ public:
     engine& operator=(engine const&) = delete;
 
     auto poll_events() noexcept -> void;
+    auto wait_events(f64 timeout = 0.0f) noexcept -> void;
     
 private:    
     engine() noexcept;
