@@ -1,7 +1,7 @@
 #pragma once
 #include "tornasol/common/common.hh"
 
-namespace sol {
+namespace tornasol {
 
 enum class key {
     unknown,

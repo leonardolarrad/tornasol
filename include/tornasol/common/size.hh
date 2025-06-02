@@ -1,7 +1,7 @@
 #pragma once
-#include "./types.hh"
+#include "./def.hh"
 
-namespace sol {
+namespace tornasol {
 
 template <class T> requires (std::integral<T> || std::floating_point<T>)
 struct size2 {
@@ -87,4 +87,4 @@ using isize2 = size2<i32>;
 using usize2 = size2<u32>;
 using fsize2 = size2<f32>;
 
-} // namespace sol
+} // namespace tornasol

@@ -1,7 +1,7 @@
 #include "tornasol/platform/window.hh"
 #include "GLFW/glfw3.h"
 
-namespace sol {
+namespace tornasol {
 
 class glfw_window;
 
@@ -249,4 +249,4 @@ auto make_window(std::string_view title, isize2 size) -> result<unique<window>> 
     return std::make_unique<glfw_window>(glfw_handle);
 }
 
-} // namespace sol
+} // namespace tornasol

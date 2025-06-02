@@ -1,8 +1,9 @@
+#pragma once
 #include <expected>
 #include <string>
 #include <string_view>
 
-namespace sol {
+namespace tornasol {
 
 class error {
 public:
@@ -20,4 +21,4 @@ private:
 template <class T>
 using result = std::expected<T, error>;
 
-} // namespace sol
+} // namespace tornasol

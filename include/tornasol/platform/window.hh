@@ -3,7 +3,7 @@
 #include "tornasol/common/common.hh"
 #include "tornasol/platform/input.hh"
 
-namespace sol {
+namespace tornasol {
 
 class window {
 public:

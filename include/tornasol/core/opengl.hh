@@ -1,7 +1,7 @@
 #pragma once
 #include "tornasol/common/def.hh"
 
-namespace sol {
+namespace tornasol {
 
 using opengl_load_proc = void* (*)(char const*);
 

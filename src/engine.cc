@@ -2,7 +2,7 @@
 #include <GLFW/glfw3.h>
 #include "tornasol/core/engine.hh"
 
-namespace sol {
+namespace tornasol {
 
 static auto _check_if_glfw_is_initialized() -> bool {
     glfwGetTime();
@@ -66,4 +66,4 @@ auto engine::wait_events(f64 timeout) noexcept -> void {
     }
 }
 
-} // namespace sol
+} // namespace tornasol

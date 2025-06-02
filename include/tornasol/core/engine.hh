@@ -1,7 +1,7 @@
 #pragma once
 #include "tornasol/common/common.hh"
 
-namespace sol {
+namespace tornasol {
 
 class TORNASOL_EXPORT engine;
 TORNASOL_EXPORT auto init_engine() -> result<engine>; 
@@ -26,4 +26,4 @@ private:
     bool _main_instance = false;
 };
 
-} // namespace sol
+} // namespace tornasol
